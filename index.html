@@ -1,258 +1,255 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>MICRO CONCEPTS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MICRO Home - YouTube Style</title>
+    <link rel="icon" href="assets/images/icon/icon-micro.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/consolidated.css">
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="is-preload">
-    <!-- Background Slideshow -->
-    <div class="background-slideshow">
-        <div class="slide" style="background-image: url('images/back-1.jpg');"></div>
-        <div class="slide" style="background-image: url('images/back-2.jpg');"></div>
-        <div class="slide" style="background-image: url('images/back-3.jpg');"></div>
-        <div class="slide" style="background-image: url('images/back-4.jpg');"></div>
-        <div class="slide" style="background-image: url('images/back-5.jpg');"></div>
-        <div class="slide" style="background-image: url('images/back-6.jpg');"></div>
-        <div class="slide" style="background-image: url('images/back-7.jpg');"></div>
-        <div class="slide" style="background-image: url('images/back-8.jpg');"></div>
-        <div class="slide" style="background-image: url('images/back-9.jpg');"></div>
-        <div class="slide" style="background-image: url('images/back-10.jpg');"></div>
-    </div>
-    
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay"></div>
-    
-<!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="nav-logo-container">
-        <a href="index.html" class="nav-link" id="mobile-menu-toggle">
-            <img src="images/logo.png" alt="MICRO" class="nav-icon">
-        </a>
-    </div>
-    
-    <ul class="nav-menu">
-        <li class="nav-item">
-            <a href="wraps.html" class="nav-link">
-                <img src="images/menu-auto.webp" alt="WRAPS" class="nav-icon">
-                <span class="nav-text">WRAPS</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="detailing.html" class="nav-link">
-                <img src="images/menu-deta.webp" alt="DETAILING" class="nav-icon">
-                <span class="nav-text">DETAILING</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="advertising.html" class="nav-link">
-                <img src="images/menu-adve.webp" alt="ADVERTISING & PROMOTIONS" class="nav-icon">
-                <span class="nav-text">ADVERTISING</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="gigs.html" class="nav-link">
-                <img src="images/menu-gigs.jpg" alt="GIGS" class="nav-icon">
-                <span class="nav-text">GIGS</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="r&d.html" class="nav-link">
-                <img src="images/menu-r&d.jpg" alt="R&D" class="nav-icon">
-                <span class="nav-text">R&D</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="products.html" class="nav-link">
-                <img src="images/menu-prod.jpg" alt="PRODUCTS" class="nav-icon">
-                <span class="nav-text">PRODUCTS</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="reviews.html" class="nav-link">
-                <img src="images/menu-revi.jpg" alt="REVIEWS" class="nav-icon">
-                <span class="nav-text">REVIEWS</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="contact.html" class="nav-link">
-                <img src="images/menu-cont.png" alt="CONTACT" class="nav-icon">
-                <span class="nav-text">CONTACT</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-
-<!-- Title Bar -->
-<div class="title-bar">
-    <h1>MICRO CONCEPTS</h1>
-    <h2>Driven by Detail - Designed for Impact</h2>
-</div>
-
-    <!-- Wrapper -->
-    <div id="wrapper">
-        <!-- Main -->
-        <div id="main">
-            <div class="inner">
-                <header>
-                    <p>At Micro Concepts, we bring over 20 years of hands-on industry experience to British Columbia - combining deep expertise with a bold, modern presence. Our work is powered by proprietary techniques: custom, efficient, and cutting-edge - offering solutions you won't find anywhere else.</p>
-                    <p>We specialize in vehicle wraps, paint protection films, premium signage, and custom retail displays, transforming vehicles and spaces into bold, high-impact statements. Whether it's a single car or a full fleet, a retail environment or an architectural surface, every project is treated with precision and pride.</p>
-                    <p>As a newly established name in BC, we're committed to building genuine, long-lasting relationships—not through exaggerated promises or empty warranties, but through reliable results, transparent communication, and guarantees you can truly count on.</p>
-                    <p>Whether you're launching a campaign, protecting your vehicle, or redefining a space, we deliver with precision, creativity, and a deep respect for your vision.</p>
-                    
-                </header>
-                
-                <!-- Content Slideshow (replaces tiles) -->
-                <div class="content-carousel-container">
-                    <div class="content-carousel">
-                        <div class="content-carousel-inner">
-                            <!-- Carousel items will be added dynamically with JavaScript -->
-                        </div>
-                        <button class="content-carousel-control prev">&lt;</button>
-                        <button class="content-carousel-control next">&gt;</button>
-                        <div class="content-carousel-indicators">
-                            <!-- Indicators will be added dynamically with JavaScript -->
-                        </div>
-                    </div>
-                </div>
+<body>
+    <!-- Header Bar -->
+    <div class="header-bar">
+        <!-- Title Container with Menu Button -->
+        <div class="title-container">
+            <div class="nav-container">
+                <button class="nav-toggle" id="navToggle">
+                    <img src="assets/images/icon/icon-micro.ico" alt="Menu" class="nav-icon">
+                </button>
+            </div>
+            <div class="title-content">
+                <h1>MICRO CONCEPTS</h1>
+                <h2>THE OTHER PERSPECTIVE OF CUSTOMIZATION</h2>
             </div>
         </div>
 
-<!-- Footer - Thin line -->
-<footer id="footer">
-    <div class="inner">
-        <ul class="copyright">
-            <li>&copy; 2025-Micro Concepts. All rights reserved</li>
-            <li>Design: <a href="https://www.linkedin.com/in/microwraps">Micro Concepts</a></li>
+        <!-- QR Code -->
+        <div class="header-qr">
+            <img src="assets/images/icon/icon-qr.ico" alt="QR Code">
+        </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu" id="navMenu">
+        <a href="micro-home.html" class="home-button">
+            <img src="assets/images/icon/icon-micro.ico" alt="Micro Concepts Icon">
+            MICRO HOME
+        </a>
+        <ul>
+            <li><a href="micro-auto-lab.html"><img src="assets/images/icon/icon-auto.ico" alt="Auto Lab">AUTO LAB</a></li>
+            <li><a href="micro-advertising.html"><img src="assets/images/icon/icon-advertising.ico" alt="Advertising">ADVERTISING</a></li>
+            <li><a href="micro-gig-shop.html"><img src="assets/images/icon/icon-gigs.ico" alt="Gig Shop">GIG SHOP</a></li>
+            <li><a href="micro-r&d.html"><img src="assets/images/icon/icon-r&d.ico" alt="R&D">R&D</a></li>
+            <li><a href="micro-gallery.html"><img src="assets/images/icon/icon-gallery.ico" alt="Gallery">GALLERY</a></li>
+            <li><a href="micro-contact-us.html"><img src="assets/images/icon/icon-contact.ico" alt="Contact">CONTACT US</a></li>
         </ul>
     </div>
-</footer>
 
-<!-- Vertical Social Media Bar -->
-<div class="vertical-social-bar">
-    <div class="social-title-vertical">
-        <span>FOLLOW US - CONNECT WITH US - REVIEW US - WE ARE HERE</span>
+    <!-- Social Media Bar -->
+    <div class="vertical-social-bar">
+        <div class="social-container-vertical">
+            <div class="social-title-container">
+                <span class="social-title-text">FOLLOW US - CONNECT WITH US - REVIEW US - WE ARE HERE</span>
+            </div>
+            <div class="social-icons-container">
+                <a href="mailto:microconca@gmail.com" class="social-icon">
+                    <img src="assets/images/icon/icon-social-gmail.ico" alt="Gmail">
+                </a>
+                <a href="https://www.google.com/search?q=microconcepts.ca/" class="social-icon">
+                    <img src="assets/images/icon/icon-social-google.ico" alt="Google">
+                </a>
+                <a href="https://www.instagram.com/microwraps/" class="social-icon">
+                    <img src="assets/images/icon/icon-social-instagram.ico" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/microwraps/" class="social-icon">
+                    <img src="assets/images/icon/icon-social-linkedin.ico" alt="LinkedIn">
+                </a>
+                <a href="https://www.tiktok.com/@microwraps" class="social-icon">
+                    <img src="assets/images/icon/icon-social-tiktok.ico" alt="TikTok">
+                </a>
+                <a href="https://wa.me/17789381050" class="social-icon">
+                    <img src="assets/images/icon/icon-social-whatsapp.ico" alt="WhatsApp">
+                </a>
+                <a href="https://x.com/miwraps" class="social-icon">
+                    <img src="assets/images/icon/icon-social-x-twitter.ico" alt="X / Twitter">
+                </a>
+                <a href="https://www.youtube.com/channel/UCevMWYy8eyxw4m7KhnwntkQ" class="social-icon">
+                    <img src="assets/images/icon/icon-social-youtube.ico" alt="YouTube">
+                </a>
+                <a href="https://www.snapchat.com/add/microwraps" class="social-icon">
+                    <img src="assets/images/icon/icon-social-snapchat.ico" alt="Snapchat">
+                </a>
+                <a href="https://www.google.com/maps/place/716+5th+St,+New+Westminster,+BC+V3L+2Y3" class="social-icon">
+                    <img src="assets/images/icon/icon-social-location.ico" alt="Location">
+                </a>
+                <a href="https://www.facebook.com/mconbc/" class="social-icon">
+                    <img src="assets/images/icon/icon-social-facebook.ico" alt="Facebook">
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="social-container-vertical">
-        <a href="mailto:microconca@gmail.com" class="social-icon">
-            <img src="images/Link-gmail.png" alt="Gmail">
+
+    <!-- Mobile Social Media Bar -->
+    <div class="horizontal-social-bar">
+        <div class="social-container-horizontal">
+            <div class="social-title-container-mobile">
+                <span class="social-title-text-mobile">FOLLOW US - CONNECT - REVIEW - WE ARE HERE</span>
+            </div>
+            <div class="social-icons-container-mobile">
+                <a href="mailto:microconca@gmail.com" class="social-icon">
+                    <img src="assets/images/icon/icon-social-gmail.ico" alt="Gmail">
+                </a>
+                <a href="https://www.google.com/search?q=microconcepts.ca/" class="social-icon">
+                    <img src="assets/images/icon/icon-social-google.ico" alt="Google">
+                </a>
+                <a href="https://www.instagram.com/microwraps/" class="social-icon">
+                    <img src="assets/images/icon/icon-social-instagram.ico" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/microwraps/" class="social-icon">
+                    <img src="assets/images/icon/icon-social-linkedin.ico" alt="LinkedIn">
+                </a>
+                <a href="https://www.tiktok.com/@microwraps" class="social-icon">
+                    <img src="assets/images/icon/icon-social-tiktok.ico" alt="TikTok">
+                </a>
+                <a href="https://wa.me/17789381050" class="social-icon">
+                    <img src="assets/images/icon/icon-social-whatsapp.ico" alt="WhatsApp">
+                </a>
+                <a href="https://x.com/miwraps" class="social-icon">
+                    <img src="assets/images/icon/icon-social-x-twitter.ico" alt="X / Twitter">
+                </a>
+                <a href="https://www.youtube.com/channel/UCevMWYy8eyxw4m7KhnwntkQ" class="social-icon">
+                    <img src="assets/images/icon/icon-social-youtube.ico" alt="YouTube">
+                </a>
+                <a href="https://www.snapchat.com/add/microwraps" class="social-icon">
+                    <img src="assets/images/icon/icon-social-snapchat.ico" alt="Snapchat">
+                </a>
+                <a href="https://www.google.com/maps/place/716+5th+St,+New+Westminster,+BC+V3L+2Y3" class="social-icon">
+                    <img src="assets/images/icon/icon-social-location.ico" alt="Location">
+                </a>
+                <a href="https://www.facebook.com/mconbc/" class="social-icon">
+                    <img src="assets/images/icon/icon-social-facebook.ico" alt="Facebook">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- YouTube-like two-column layout -->
+        <div class="main-content">
+            <!-- Left column (GIF + Intro) -->
+            <div class="left-column">
+                <div class="gif-container">
+                    <img src="assets/images/gif/home.gif" alt="Micro Concepts Introduction">
+                </div>
+                
+                <div class="intro-section">
+                    <h3>Welcome to Micro Concepts — your partner in creativity, customization, and practical innovation.</h3>
+                    
+                    <p>Based in New Westminster, British Columbia, we bring together automobile customization, commercial advertising, handy repair solutions, and forward-thinking research — all under one roof.</p>
+                    
+                    <p>We believe in delivering work that lasts, services that add real value, and solutions that make life simpler, smarter, and more sustainable.</p>
+                    
+                    <h3>Check out our services</h3>
+                </div>
+            </div>
+            
+            <!-- Right column (Services) -->
+            <div class="services-grid-container">
+                <div class="services-grid">
+                    <a href="micro-auto-lab.html" class="service-card">
+                        <div class="service-image">
+                            <img src="assets/images/gallery/auto.jpg" alt="Auto Lab">
+                        </div>
+                        <div class="service-content">
+                            <h2>AUTO LAB</h2>
+                            <p>Turn your vehicle into a statement. From exotic wraps and paint protection films to professional detailing.</p>
+                        </div>
+                    </a>
+            
+                    <a href="micro-advertising.html" class="service-card">
+                        <div class="service-image">
+                            <img src="assets/images/gallery/adve.jpg" alt="Advertising">
+                        </div>
+                        <div class="service-content">
+                            <h2>ADVERTISING</h2>
+                            <p>Your brand deserves to be unforgettable. We craft eye-catching signage, retail displays, fleet wraps.</p>
+                        </div>
+                    </a>
+            
+                    <a href="micro-gig-shop.html" class="service-card">
+                        <div class="service-image">
+                            <img src="assets/images/gallery/gigs.jpg" alt="Gig Shop">
+                        </div>
+                        <div class="service-content">
+                            <h2>GIG SHOP</h2>
+                            <p>Your neighbourhood handy team for small projects and repairs — from carpentry, painting, and welding.</p>
+                        </div>
+                    </a>
+            
+                    <a href="micro-r&d.html" class="service-card">
+                        <div class="service-image">
+                            <img src="assets/images/gallery/r&d.jpg" alt="R&D">
+                        </div>
+                        <div class="service-content">
+                            <h2>RESEARCH & DEVELOPMENT</h2>
+                            <p>We're investing in ideas that matter: planet-friendly, waste-reducing solutions.</p>
+                        </div>
+                    </a>
+            
+                    <a href="micro-gallery.html" class="service-card">
+                        <div class="service-image">
+                            <img src="assets/images/gallery/gall.jpg" alt="Gallery">
+                        </div>
+                        <div class="service-content">
+                            <h2>GALLERY</h2>
+                            <p>Explore our portfolio of completed projects. See the quality of our work.</p>
+                        </div>
+                    </a>
+            
+                    <a href="micro-contact-us.html" class="service-card">
+                        <div class="service-image">
+                            <img src="assets/images/gallery/cont.jpg" alt="Contact">
+                        </div>
+                        <div class="service-content">
+                            <h2>CONTACT US</h2>
+                            <p>Ready to start your project? Get in touch with our team to discuss your needs.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Why Us section (full width) -->
+            <div class="why-us-full">
+                <h2>Why Micro Concepts?</h2>
+                <ul>
+                    <li><strong>Independent & People-Focused</strong> — No corporate influence, no shortcuts.</li>
+                    <li><strong>Quality Without Excess</strong> — Premium results, fair pricing.</li>
+                    <li><strong>Innovation With Care</strong> — Designed to last, built to serve society.</li>
+                </ul>
+                
+                <p>✨ At Micro Concepts, we don't just complete projects — we create experiences, solutions, and legacies.</p>
+                <p>Let's build something lasting together.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact us: <a href="mailto:microconca@gmail.com">microconca@gmail.com</a></p>
+        <p>© 2023 Micro Concepts. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating action buttons -->
+    <div class="floating-buttons">
+        <a href="#top" class="floating-btn" id="backToTopBtn" title="Back to Top">
+            <i class="fas fa-arrow-up"></i>
         </a>
-        <a href="https://www.google.com/search?q=microconcepts.ca/" class="social-icon">
-            <img src="images/Link-google.png" alt="Google">
-        </a>
-        <a href="https://www.instagram.com/microwraps/" class="social-icon">
-            <img src="images/Link-instagram.png" alt="Instagram">
-        </a>
-        <a href="https://www.linkedin.com/in/microwraps/" class="social-icon">
-            <img src="images/Link-linkedin.png" alt="LinkedIn">
-        </a>
-        <a href="https://www.tiktok.com/@microwraps" class="social-icon">
-            <img src="images/Link-tiktok.png" alt="TikTok">
-        </a>
-        <a href="https://wa.me/17789381050" class="social-icon">
-            <img src="images/Link-whatsapp.png" alt="WhatsApp">
-        </a>
-        <a href="https://x.com/miwraps" class="social-icon">
-            <img src="images/link-x.png" alt="X / Twitter">
-        </a>
-        <a href="https://www.youtube.com/channel/UCevMWYy8eyxw4m7KhnwntkQ" class="social-icon">
-            <img src="images/Link-youtube.png" alt="YouTube">
-        </a>
-        <a href="https://www.snapchat.com/add/microwraps" class="social-icon">
-            <img src="images/Link-snapchat.png" alt="Snapchat">
-        </a>
-        <a href="https://www.google.com/maps/place/716+5th+St,+New+Westminster,+BC+V3L+2Y3" class="social-icon">
-            <img src="images/Link-location.png" alt="Location">
-        </a>
-        <a href="https://www.facebook.com/mconbc/" class="social-icon">
-            <img src="images/Link-facebook.png" alt="Facebook">
+        <a href="micro-home.html" class="floating-btn" id="backToHomeBtn" title="Back to Home">
+            <i class="fas fa-home"></i>
         </a>
     </div>
-</div>
 
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Background slideshow functionality (existing code)
-    const bgSlides = document.querySelectorAll('.background-slideshow .slide');
-    let currentBgSlide = 0;
-    
-    function showBgSlide(n) {
-        bgSlides.forEach(slide => slide.classList.remove('active'));
-        currentBgSlide = (n + bgSlides.length) % bgSlides.length;
-        bgSlides[currentBgSlide].classList.add('active');
-    }
-    
-    function nextBgSlide() {
-        showBgSlide(currentBgSlide + 1);
-    }
-    
-    showBgSlide(0);
-    setInterval(nextBgSlide, 5000);
-    
-    // Mobile menu functionality - FIXED VERSION
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const overlay = document.querySelector('.mobile-menu-overlay');
-
-    function toggleMenu() {
-        navMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
-        // Prevent body scrolling when menu is open
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-    }
-
-    if (mobileMenuToggle && navMenu) {
-        mobileMenuToggle.addEventListener('click', function(e) {
-            // Always prevent default on mobile
-            if (window.innerWidth <= 992) {
-                e.preventDefault();
-                toggleMenu();
-            }
-            // On desktop, allow normal link behavior
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (navMenu.classList.contains('active') && 
-                !navMenu.contains(e.target) && 
-                e.target !== mobileMenuToggle && 
-                !mobileMenuToggle.contains(e.target)) {
-                toggleMenu();
-            }
-        });
-        
-        // Close menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-menu .nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 992) {
-                    toggleMenu();
-                }
-            });
-        });
-        
-        // Close menu when pressing Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-                toggleMenu();
-            }
-        });
-    }
-    
-    // Content carousel functionality (existing code)
-    // ... [rest of your existing carousel code]
-});
-</script>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/carousel.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

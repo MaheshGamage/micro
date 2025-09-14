@@ -447,11 +447,8 @@ footer {
         width: 100%;
         margin-top: 0px;
     }
-
-    .html, body {
-        height: relative;
-        overflow: flexible;
-        position: relative;
+    html, body {
+        overscroll-behavior: none;
     }
     /* Further text adjustments for very small screens */
     .intro-section h3 {

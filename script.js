@@ -108,5 +108,5 @@ document.addEventListener('click', function(event) {
 // Add click event to navigate to home page
 navToggle.addEventListener('click', function(e) {
   e.preventDefault();
-  window.location.href = 'micro-1home.html';
+  window.location.href = 'index.html';
 });

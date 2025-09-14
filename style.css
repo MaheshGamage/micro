@@ -5,12 +5,29 @@ html, body {
     position: relative;
 }
 
+body {
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+}
+
 .container {
     height: 100%;
     overflow: auto;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
 }
+/* Ensure all scrolling containers have proper behavior */
+.home-main-content,
+.gif-intro-container,
+.why-us-full {
+    overscroll-behavior: contain;
+}
 
+/* Fix for Safari specific issues */
+@supports (-webkit-touch-callout: none) {
+    .container {
+        height: -webkit-fill-available;
+    }
+}
 /* Adjust container padding for mobile */
 @media (max-width: 768px) {
     .container {

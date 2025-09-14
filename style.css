@@ -445,12 +445,12 @@ footer {
     .title-container {
         order: 2;
         width: 100%;
-        margin-top: 2px;
+        margin-top: 0px;
     }
 
     .html, body {
         height: relative;
-        overflow: hidden;
+        overflow: flexible;
         position: relative;
     }
     /* Further text adjustments for very small screens */

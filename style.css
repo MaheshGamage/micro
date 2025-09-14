@@ -439,17 +439,17 @@ footer {
     .header-bar {
         flex-wrap: wrap;
         height: auto;
-        padding: 8px 8px;
+        padding: 8px 8px 8px 0;
     }
     
     .title-container {
         order: 2;
         width: 100%;
-        margin-top: 8px;
+        margin-top: 2px;
     }
 
     .html, body {
-        height: 100%;
+        height: full;
         overflow: hidden;
         position: relative;
     }

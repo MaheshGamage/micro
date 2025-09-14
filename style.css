@@ -406,7 +406,7 @@ footer {
     }
     
     .header-bar {
-        padding: 8px 10px;
+        padding: 8px 8px;
     }
     
     .title-container h1 {
@@ -439,7 +439,7 @@ footer {
     .header-bar {
         flex-wrap: wrap;
         height: auto;
-        padding: 8px;
+        padding: 8px 8px;
     }
     
     .title-container {
@@ -447,7 +447,12 @@ footer {
         width: 100%;
         margin-top: 8px;
     }
-    
+
+    .html, body {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+    }
     /* Further text adjustments for very small screens */
     .intro-section h3 {
         font-size: 1rem;

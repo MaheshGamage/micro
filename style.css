@@ -92,8 +92,8 @@ body {
 .nav-menu {
     position: fixed;
     top: 75px; /* Changed from 0 to 60px to position below header */
-    left: -175px;
-    width: 175px;
+    left: -185px;
+    width: 185px;
     height: auto; /* Adjusted height */
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);

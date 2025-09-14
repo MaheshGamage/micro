@@ -22,7 +22,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 16px;
+    padding: 2px 16px;
     background-color: rgb(195, 221, 255);
     box-shadow: 0 2px 5px rgb(0, 0, 0);
     z-index: 1000;
@@ -439,13 +439,13 @@ footer {
     .header-bar {
         flex-wrap: wrap;
         height: auto;
-        padding: 8px;
+        padding: 2px;
     }
     
     .title-container {
         order: 2;
         width: 100%;
-        margin-top: 8px;
+        margin-top: 2px;
     }
     
     /* Further text adjustments for very small screens */

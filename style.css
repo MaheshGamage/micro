@@ -1,37 +1,3 @@
-/* iOS-specific scroll fix */
-@supports (-webkit-touch-callout: none) {
-    body {
-        height: 100%;
-        overflow: hidden;
-    }
-    
-    .container {
-        height: 100vh;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    /* Prevent elastic scrolling on iOS */
-    .container::-webkit-scrollbar {
-        display: none;
-    }
-}
-
-/* Additional Safari-specific fix */
-@media not all and (min-resolution: 0.001dpcm) {
-    @supports (-webkit-appearance: none) {
-        body {
-            height: 100%;
-            overflow: hidden;
-        }
-        
-        .container {
-            height: 100vh;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-    }
-}
 /* Base Styles */
 * {
     margin: 0;

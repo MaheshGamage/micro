@@ -144,3 +144,24 @@ if (!isTouchDevice) {
         window.location.href = 'index.html';
     });
 }
+// Prevent elastic scroll on iOS
+document.addEventListener('touchmove', function(e) {
+    if (window.scrollY === 0) {
+        e.preventDefault();
+    }
+}, { passive: false });
+
+// Check if at bottom of page and prevent overscroll
+let lastScrollTop = 0;
+window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+    
+    if (scrollTop > lastScrollTop && (scrollTop + clientHeight) >= scrollHeight) {
+        // At bottom of page, prevent further scrolling
+        window.scrollTo(0, scrollHeight - clientHeight);
+    }
+    
+    lastScrollTop = scrollTop;
+});

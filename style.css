@@ -91,7 +91,7 @@ body {
 
 .nav-menu {
     position: fixed;
-    top: 60px; /* Changed from 0 to 60px to position below header */
+    top: 75px; /* Changed from 0 to 60px to position below header */
     left: -175px;
     width: 175px;
     height: auto; /* Adjusted height */

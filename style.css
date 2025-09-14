@@ -164,25 +164,6 @@ body {
     object-fit: contain;
 }
 
-/* QR Code */
-.header-qr {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-}
-
-.header-qr:hover {
-    transform: scale(1.5);
-}
-
-.header-qr img {
-    width: 100%;
-    height: auto;
-}
-
 /* Main Content */
 .container {
     max-width: 1400px;

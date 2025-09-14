@@ -1,39 +1,3 @@
-// iOS detection
-function isIOS() {
-    return [
-        'iPad Simulator',
-        'iPhone Simulator',
-        'iPod Simulator',
-        'iPad',
-        'iPhone',
-        'iPod'
-    ].includes(navigator.platform) || 
-    (navigator.userAgent.includes("Mac") && "ontouchend" in document);
-}
-
-// iOS scroll fix
-if (isIOS()) {
-    document.addEventListener('DOMContentLoaded', function() {
-        // Prevent elastic scroll on iOS
-        document.addEventListener('touchmove', function(e) {
-            if (window.scrollY === 0) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-        
-        // Check if we're at the bottom of the page
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight;
-            const clientHeight = document.documentElement.clientHeight;
-            
-            if (scrollTop + clientHeight >= scrollHeight) {
-                // At bottom of page, prevent further scrolling
-                window.scrollTo(0, scrollHeight - clientHeight);
-            }
-        });
-    });
-}
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

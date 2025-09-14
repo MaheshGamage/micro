@@ -1,3 +1,23 @@
+/* Prevent elastic scrolling on iOS */
+html, body {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+}
+
+/* Adjust container padding for mobile */
+@media (max-width: 768px) {
+    .container {
+        padding-top: 70px;
+        padding-bottom: 40px; /* Added padding to account for social bar */
+    }
+}
 /* Base Styles */
 * {
     margin: 0;

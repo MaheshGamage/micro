@@ -1,38 +1,3 @@
-// iOS scroll bounce fix
-function isIOS() {
-    return [
-        'iPad Simulator',
-        'iPhone Simulator',
-        'iPod Simulator',
-        'iPad',
-        'iPhone',
-        'iPod'
-    ].includes(navigator.platform) || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
-}
-
-if (isIOS()) {
-    document.addEventListener('touchmove', function(e) {
-        // Prevent scrolling beyond boundaries
-        if (window.scrollY === 0) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-    
-    // Additional iOS scroll handling
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = document.documentElement.clientHeight;
-        
-        // Prevent overscroll at bottom
-        if (scrollTop > lastScrollTop && (scrollTop + clientHeight) >= scrollHeight) {
-            window.scrollTo(0, scrollHeight - clientHeight);
-        }
-        
-        lastScrollTop = scrollTop;
-    });
-}
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

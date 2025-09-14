@@ -447,9 +447,7 @@ footer {
         width: 100%;
         margin-top: 0px;
     }
-    html, body {
-        overscroll-behavior: none;
-    }
+
     /* Further text adjustments for very small screens */
     .intro-section h3 {
         font-size: 1rem;

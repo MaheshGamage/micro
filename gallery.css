@@ -164,4 +164,24 @@ flex-direction: column;
 /* Close button positioning adjustment */
 .close {
   z-index: 3;
+
+}
+@media (max-width: 480px) {
+  .images-container,
+  .project-description {
+    min-width: 100% !important;
+    width: 100%;
+  }
+  
+  .project-content {
+    gap: 15px;
+  }
+  
+  .images-container {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  .project-image {
+    height: 100px;
+  }
 }

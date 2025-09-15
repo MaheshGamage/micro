@@ -198,4 +198,54 @@ function changeImage(direction) {
     
     const modalImg = document.getElementById('modalImage');
     modalImg.src = currentProjectImages[currentImageIndex];
+
 }
+// Touch swipe functionality for mobile devices
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleTouchStart(event) {
+    touchStartX = event.changedTouches[0].screenX;
+}
+
+function handleTouchEnd(event) {
+    touchEndX = event.changedTouches[0].screenX;
+    handleSwipe();
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50; // Minimum swipe distance in pixels
+    
+    if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe left - go to next image
+        changeImage(1);
+    } else if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe right - go to previous image
+        changeImage(-1);
+    }
+}
+
+// Add touch event listeners to modal
+function addSwipeFunctionality() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    
+    if (modal && modalImg) {
+        modalImg.addEventListener('touchstart', handleTouchStart, false);
+        modalImg.addEventListener('touchend', handleTouchEnd, false);
+        
+        // Prevent default on touchmove to avoid scrolling while swiping
+        modalImg.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+    }
+}
+
+// Update the createModal function to include swipe functionality
+const originalCreateModal = createModal;
+createModal = function() {
+    originalCreateModal();
+    
+    // Add a small delay to ensure the modal is fully created
+    setTimeout(addSwipeFunctionality, 100);
+};

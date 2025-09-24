@@ -1,8 +1,8 @@
 [
   {
-    "title": "Custom Vehicle Wrap - Tesla Model 3",
+    "title": "High Gloss - Forged Carbon Fibre Wrap",
     "date": "October 2023",
-    "description": "Full matte black wrap with chrome delete and custom accents for a premium look. The client wanted a sleek, professional appearance while maintaining the vehicle's elegant lines.",
+    "description": "Highly flexible polymer PET film with Good weather resistance. No residual glue after removal and Long durability; 7 years indoors and 3-5 years outdoors",
     "images": [
       "assets/images/gallery/wrap1.webp",
       "assets/images/gallery/wrap2.webp",
@@ -11,9 +11,9 @@
     ]
   },
   {
-    "title": "Commercial Van Branding - Joe's Plumbing",
+    "title": "Premium Glossy Orange Wrap Film - Tesla Full Wrap",
     "date": "September 2023",
-    "description": "Complete vehicle branding for a local plumbing business. Designed to be highly visible and professional, featuring contact information and services offered.",
+    "description": "Made with an automotive-cast vinyl. Indoor life of over 6 years, outdoor life of over 4 years.",
     "images": [
       "assets/images/gallery/wrap5.webp",
       "assets/images/gallery/wrap6.webp",
@@ -22,9 +22,9 @@
     ]
   },
   {
-    "title": "Retail Store Signage - Downtown Boutique",
+    "title": "Interior Carbon Fibre & Wood Grain Wraps",
     "date": "August 2023",
-    "description": "Custom interior and exterior signage for a fashion boutique. Included illuminated front sign, window graphics, and wayfinding signs throughout the store.",
+    "description": "Custom Carbon Fibre and Wood Grain wraps for interior individual sections of your choice at a cheap price.",
     "images": [
       "assets/images/gallery/wrap9.webp",
       "assets/images/gallery/wrap10.webp",
@@ -32,4 +32,5 @@
       "assets/images/gallery/wrap12.webp"
     ]
   }
+
 ]

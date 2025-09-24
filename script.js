@@ -1,114 +1,206 @@
-// Navigation and UI functionality
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 70,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Add active class to current page in navigation
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 70,
-                    behavior: 'smooth'
-                });
-            }
+    const currentLocation = location.href;
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    const menuLength = navLinks.length;
+    
+    for (let i = 0; i < menuLength; i++) {
+        if (navLinks[i].href === currentLocation) {
+            navLinks[i].classList.add('active');
+        }
+    }
+});
+
+// Back to top button functionality
+const backToTopBtn = document.getElementById('backToTopBtn');
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
     });
+}
 
-    // Active page highlighting
-    const currentLocation = location.href;
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        if (link.href === currentLocation) link.classList.add('active');
-    });
+// Show/hide back to top button based on scroll position
+window.addEventListener('scroll', function() {
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    if (backToTopBtn) {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.style.opacity = '1';
+            backToTopBtn.style.visibility = 'visible';
+        } else {
+            backToTopBtn.style.opacity = '0';
+            backToTopBtn.style.visibility = 'hidden';
+        }
+    }
+});
 
-    // Back to top button
+// Initially hide the back to top button
+document.addEventListener('DOMContentLoaded', function() {
     const backToTopBtn = document.getElementById('backToTopBtn');
     if (backToTopBtn) {
         backToTopBtn.style.opacity = '0';
         backToTopBtn.style.visibility = 'hidden';
-        
-        backToTopBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.style.opacity = '1';
-                backToTopBtn.style.visibility = 'visible';
-            } else {
-                backToTopBtn.style.opacity = '0';
-                backToTopBtn.style.visibility = 'hidden';
-            }
-        });
     }
+});
 
-    // Navigation menu
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    let menuHoverTimeout;
-    const isTouchDevice = 'ontouchstart' in window;
+// Navigation menu functionality
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+let menuHoverTimeout;
+let isTouchDevice = 'ontouchstart' in window;
 
-    function openMenu() {
-        clearTimeout(menuHoverTimeout);
-        navMenu.classList.add('active');
-    }
+// Function to open menu
+function openMenu() {
+    clearTimeout(menuHoverTimeout);
+    navMenu.classList.add('active');
+}
 
-    function closeMenu() {
-        menuHoverTimeout = setTimeout(() => navMenu.classList.remove('active'), 100);
-    }
+// Function to close menu
+function closeMenu() {
+    menuHoverTimeout = setTimeout(function() {
+        navMenu.classList.remove('active');
+    }, 100);
+}
 
-    function toggleMenu() {
-        navMenu.classList.contains('active') ? closeMenu() : openMenu();
-    }
-
-    if (isTouchDevice) {
-        navToggle.addEventListener('click', (e) => { e.preventDefault(); toggleMenu(); });
-        navMenu.querySelectorAll('a').forEach(item => item.addEventListener('click', closeMenu));
-        document.addEventListener('click', (e) => {
-            if (!navToggle.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
-                closeMenu();
-            }
-        });
+// Function to toggle menu (for touch devices)
+function toggleMenu() {
+    if (navMenu.classList.contains('active')) {
+        closeMenu();
     } else {
-        navToggle.addEventListener('mouseenter', openMenu);
-        navMenu.addEventListener('mouseleave', closeMenu);
-        navMenu.addEventListener('mouseenter', () => clearTimeout(menuHoverTimeout));
-        document.addEventListener('click', (e) => {
-            if (!navToggle.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-        
-        navToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.location.href = 'index.html';
-        });
+        openMenu();
     }
+}
 
-    // Slideshows
-    const homeSlides = document.querySelectorAll('.home-slide');
-    let currentHomeSlide = 0;
+// Set up event listeners based on device type
+if (isTouchDevice) {
+    // For touch devices: use click/touch events
+    navToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleMenu();
+    });
     
-    if (homeSlides.length > 1) {
-        setInterval(() => {
-            homeSlides[currentHomeSlide].classList.remove('active');
-            currentHomeSlide = (currentHomeSlide + 1) % homeSlides.length;
-            homeSlides[currentHomeSlide].classList.add('active');
-        }, 4000);
+    // Close menu when a menu item is clicked
+    const menuItems = navMenu.querySelectorAll('a');
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            closeMenu();
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = navToggle.contains(event.target) || navMenu.contains(event.target);
+        if (!isClickInsideNav && navMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+} else {
+    // For non-touch devices: use hover events
+    navToggle.addEventListener('mouseenter', openMenu);
+    navMenu.addEventListener('mouseleave', closeMenu);
+    navMenu.addEventListener('mouseenter', function() {
+        clearTimeout(menuHoverTimeout);
+    });
+    
+    const navWrapper = document.querySelector('.nav-wrapper');
+    if (navWrapper) {
+        navWrapper.addEventListener('mouseleave', closeMenu);
     }
+    
+    // Also close menu if user clicks outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = navToggle.contains(event.target) || navMenu.contains(event.target);
+        if (!isClickInsideNav && navMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+}
 
-    document.querySelectorAll('.service-card').forEach(card => {
+// Add click event to navigate to home page (only for non-touch devices)
+if (!isTouchDevice) {
+    navToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'index.html';
+    });
+}
+// Service card slideshow functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    serviceCards.forEach(card => {
         const slides = card.querySelectorAll('.slide');
         let currentSlide = 0;
         
+        // Start slideshow for this card
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        // Start the slideshow (change image every 3 seconds)
         if (slides.length > 1) {
-            setInterval(() => {
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
-            }, 3000);
+            setInterval(nextSlide, 3000);
+        }
+    });
+});
+// Add this function to your existing script.js file
+
+// Home page slideshow functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Home slideshow
+    const homeSlides = document.querySelectorAll('.home-slide');
+    let currentHomeSlide = 0;
+    
+    function nextHomeSlide() {
+        if (homeSlides.length > 0) {
+            homeSlides[currentHomeSlide].classList.remove('active');
+            currentHomeSlide = (currentHomeSlide + 1) % homeSlides.length;
+            homeSlides[currentHomeSlide].classList.add('active');
+        }
+    }
+    
+    // Start the home slideshow (change image every 4 seconds)
+    if (homeSlides.length > 1) {
+        setInterval(nextHomeSlide, 4000);
+    }
+    
+    // Your existing service card slideshow code remains below...
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    serviceCards.forEach(card => {
+        const slides = card.querySelectorAll('.slide');
+        let currentSlide = 0;
+        
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        if (slides.length > 1) {
+            setInterval(nextSlide, 3000);
         }
     });
 });

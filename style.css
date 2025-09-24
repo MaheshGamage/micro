@@ -1,3 +1,4 @@
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +13,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Header Bar */
 .header-bar {
     position: fixed;
     top: 0;
@@ -27,12 +29,13 @@ body {
     height: 50px;
 }
 
+/* Title Container with Menu Button */
 .title-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-grow: 1;
-    max-width: fit-content;
+    max-width: fit-content; /* Add this to prevent stretching */
 }
 
 .title-content {
@@ -48,6 +51,14 @@ body {
     line-height: 1.2;
 }
 
+.title-container h2 {
+    color: #1f1f43;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+/* Navigation */
 .nav-container {
     position: relative;
     z-index: 1001;
@@ -72,12 +83,18 @@ body {
     display: block;
 }
 
+/* Navigation Wrapper */
+.nav-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
 .nav-menu {
     position: fixed;
-    top: 70px;
+    top: 70px; /* Changed from 0 to 60px to position below header */
     left: -175px;
     width: 175px;
-    height: auto;
+    height: auto; /* Adjusted height */
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     transition: left 0.3s ease;
@@ -93,7 +110,7 @@ body {
     list-style: none;
     padding: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: rgba(255, 255, 255, 0.98); /* Changed from 75% to 100% */
 }
 
 .nav-menu li {
@@ -105,7 +122,7 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 3px 5px;
+    padding: 3px 5px 3px 5px;
     background: none;
     border: none;
     border-bottom: 1px solid #6a9fb0;
@@ -129,6 +146,26 @@ body {
     padding-left: 20px;
 }
 
+.home-button {
+    padding: 12px 15px; /* Adjusted padding to match other items */
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    font-size: 14px; /* Adjusted font size */
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    color: #000080;
+    text-decoration: none;
+}
+
+.home-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+/* Main Content */
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -136,18 +173,14 @@ body {
     padding-top: 80px;
 }
 
+/* New layout for home page */
 .home-main-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.gif-intro-container {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
+/* Home Slideshow Container - replaces .gif-container */
 .home-slideshow-container {
     width: 50%;
     border-radius: 12px;
@@ -155,16 +188,10 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 8px rgb(0, 0, 0);
     position: relative;
-    height: auto;
+    height: auto; /* This will maintain aspect ratio */
 }
 
-.home-slideshow-container::before {
-    content: '';
-    display: block;
-    padding-top: 56.25%;
-}
-
-.home-slide, .slide {
+.home-slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -174,17 +201,55 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
-.home-slide.active, .slide.active {
+.home-slide.active {
     opacity: 1;
 }
 
-.home-slide img, .slide img {
+.home-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
+/* Ensure the container maintains the same aspect ratio as the GIF */
+.home-slideshow-container::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; /* 16:9 aspect ratio (adjust if your GIF was different) */
+}
+
+.home-slide, .home-slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Make sure the gif-intro-container has flex display */
+.gif-intro-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Responsive adjustments for home slideshow */
+@media (max-width: 992px) {
+    .gif-intro-container {
+        flex-direction: column;
+    }
+    
+    .home-slideshow-container, .intro-section {
+        width: 100%;
+    }
+    
+    .home-slideshow-container::before {
+        padding-top: 56.25%; /* Maintain aspect ratio on mobile */
+    }
+}
+
+/* Intro section - positioned to the right of GIF */
 .intro-section {
     background-color: #c5defc;
     border-radius: 12px;
@@ -197,6 +262,7 @@ body {
     justify-content: center;
 }
 
+/* Why us section */
 .why-us-full {
     background-color: #c5defc;
     border-radius: 12px;
@@ -214,6 +280,8 @@ body {
     margin-bottom: 0.5rem;
 }
 
+/* Social Media Bars */
+/* Vertical Social Bar */
 .vertical-social-bar {
     position: fixed;
     top: 50%;
@@ -233,11 +301,11 @@ body {
     box-shadow: -2px 0 5px rgb(0, 0, 0);
     padding: 5px;
     align-items: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .social-container-vertical:hover {
     transform: scale(1.1);
+    transition: transform 0.3s ease;
     background-color: rgba(0, 0, 128, 1);
 }
 
@@ -275,6 +343,7 @@ body {
     transform: scale(1.2);
 }
 
+/* Horizontal Social Bar (Mobile) */
 .horizontal-social-bar {
     display: none;
     justify-content: center;
@@ -285,11 +354,12 @@ body {
     background-color: rgba(0, 0, 128, 0.332);
     z-index: 1000;
     padding: 5px 0;
-    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .horizontal-social-bar:hover {
+    transform: scale(1.1);
     transform: translateX(-5px);
+    transition: transform 0.3s ease;
     background-color: rgba(0, 0, 128, 1);
 }
 
@@ -320,11 +390,16 @@ body {
     margin: 0 3px;
 }
 
+/* Footer */
 footer {
     text-align: center;
-    padding: 20px;
+    padding-top: 0.001px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
+/* Floating action buttons */
 .floating-buttons {
     position: fixed;
     bottom: 5px;
@@ -357,6 +432,86 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .gif-intro-container {
+        flex-direction: column;
+    }
+    
+    .home-slideshow-container, .intro-section {
+        width: 100%;
+    }
+
+    .intro-section {
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-top: 70px;
+    }
+    
+    .header-bar {
+        padding: 8px 8px;
+    }
+    
+    .title-container h1 {
+        font-size: 1.2rem;
+    }
+    
+    .title-container h2 {
+        font-size: 0.9rem;
+    }
+
+    .vertical-social-bar {
+        display: none;
+    }
+    
+    .horizontal-social-bar {
+        display: flex;
+    }
+    
+    /* Adjust text size for intro on mobile */
+    .intro-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .intro-section p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-bar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 8px 8px 8px 8px;
+    }
+    
+    .title-container {
+        order: 2;
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    /* Further text adjustments for very small screens */
+    .intro-section h3 {
+        font-size: 1rem;
+    }
+    
+    .intro-section p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .horizontal-social-bar {
+        display: none;
+    }
+}
+
+/* Service Cards Section */
 .service-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -390,6 +545,27 @@ footer {
     margin-bottom: 15px;
 }
 
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .service-card h3 {
     text-align: center;
     margin: 10px 0;
@@ -404,41 +580,8 @@ footer {
     margin: 0;
 }
 
-@media (max-width: 992px) {
-    .gif-intro-container {
-        flex-direction: column;
-    }
-    
-    .home-slideshow-container, .intro-section {
-        width: 100%;
-    }
-    
-    .home-slideshow-container::before {
-        padding-top: 56.25%;
-    }
-}
-
+/* Responsive adjustments for service cards */
 @media (max-width: 768px) {
-    .container {
-        padding-top: 70px;
-    }
-    
-    .header-bar {
-        padding: 8px;
-    }
-    
-    .title-container h1 {
-        font-size: 1.2rem;
-    }
-
-    .vertical-social-bar {
-        display: none;
-    }
-    
-    .horizontal-social-bar {
-        display: flex;
-    }
-    
     .service-cards-container {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -446,26 +589,6 @@ footer {
     
     .slideshow-container {
         height: 180px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header-bar {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 8px;
-    }
-    
-    .title-container {
-        order: 2;
-        width: 100%;
-        margin-top: 0px;
-    }
-}
-
-@media (min-width: 769px) {
-    .horizontal-social-bar {
-        display: none;
     }
 }
 

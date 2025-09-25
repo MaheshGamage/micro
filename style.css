@@ -7,7 +7,7 @@
 body {
     font-family: 'Roboto', Calibri, 'Trebuchet MS', sans-serif;
     color: #000;
-    background-color: #515857;
+    background-color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -21,7 +21,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 8px 16px;
-    background-color: rgb(195, 221, 255);
+    background-color: #dbf4ff;
     box-shadow: 0 2px 5px rgb(0, 0, 0);
     z-index: 1000;
     height: 50px;
@@ -186,7 +186,7 @@ body {
 }
 
 .intro-section {
-    background-color: #c5defc;
+    background-color: #dbf4ff;
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 1.5px;
@@ -198,7 +198,7 @@ body {
 }
 
 .why-us-full {
-    background-color: #c5defc;
+    background-color: #dbf4ff;
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 4px 6px rgb(0, 0, 0);
@@ -227,7 +227,7 @@ body {
 
 .social-container-vertical {
     display: flex;
-    background-color: rgba(0, 0, 128, 0.332);
+    background-color: rgba(255, 255, 255, 0.332);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     box-shadow: -2px 0 5px rgb(0, 0, 0);
@@ -238,13 +238,13 @@ body {
 
 .social-container-vertical:hover {
     transform: scale(1.1);
-    background-color: rgba(0, 0, 128, 1);
+    background-color: rgb(220, 244, 255);
 }
 
 .social-title-container {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    color: white;
+    color: rgb(42, 42, 42);
     padding: 5px 3px;
     font-size: 10px;
     line-height: 1.2;
@@ -282,7 +282,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 128, 0.332);
+    background-color: rgba(255, 255, 255, 0.332);
     z-index: 1000;
     padding: 5px 0;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -290,7 +290,7 @@ body {
 
 .horizontal-social-bar:hover {
     transform: translateX(-5px);
-    background-color: rgba(0, 0, 128, 1);
+    background-color: rgb(220, 244, 255);
 }
 
 .social-container-horizontal {
@@ -301,7 +301,7 @@ body {
 }
 
 .social-title-container-mobile {
-    color: white;
+    color: rgb(42, 42, 42);
     font-size: 10px;
     margin-bottom: 3px;
     text-align: center;
@@ -338,7 +338,7 @@ footer {
 .floating-btn {
     width: 30px;
     height: 30px;
-    background-color: rgba(0, 0, 128, 0.8);
+    background-color: rgba(0, 179, 255, 0.8);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -366,11 +366,12 @@ footer {
 
 .service-card {
     display: block;
-    background-color: #c5defc;
+    background-color: #dadada;
     border-radius: 12px;
     padding: 15px;
     text-decoration: none;
     color: #000080;
+    outline: rgb(70, 70, 70) solid 2px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;

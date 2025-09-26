@@ -112,3 +112,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function handleGmailClick(e) {
+    e.preventDefault();
+    
+    // Try to open default mail client
+    window.location.href = 'mailto:microconca@gmail.com';
+    
+    // Fallback to Gmail web after a short delay
+    setTimeout(() => {
+        window.open('https://mail.google.com/mail/?view=cm&fs=1&to=microconca@gmail.com', '_blank');
+    }, 100);
+    
+    return false;
+}

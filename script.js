@@ -112,27 +112,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-// Add this to your existing DOMContentLoaded function
-document.addEventListener('DOMContentLoaded', function() {
-    // Handle Gmail links with fallback
-    document.querySelectorAll('a[href*="microconca@gmail.com"]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // First try mailto: protocol
-            const mailtoLink = document.createElement('a');
-            mailtoLink.href = 'mailto:microconca@gmail.com';
-            mailtoLink.style.display = 'none';
-            document.body.appendChild(mailtoLink);
-            
-            // Try to trigger mail client
-            mailtoLink.click();
-            document.body.removeChild(mailtoLink);
-            
-            // Also open Gmail web as fallback
-            setTimeout(() => {
-                window.open('https://mail.google.com/mail/?view=cm&fs=1&to=microconca@gmail.com', '_blank');
-            }, 500);
-        });
-    });
-});

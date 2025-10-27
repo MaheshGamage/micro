@@ -1,5 +1,18 @@
 [
   {
+    "title": "Custom Bicycle Basket - Outlasts the bicycle itself",
+    "date": "October 2025",
+    "description": "Make your own custom basket or cart for your bicycle/Scooter that outlasts the vehicle itself. Super Sturdy and unmatched finish. *Fits right into a regular milk crate if you want it like that.* All items and brackets are custom-made to your needs and bike dimensions. Contact - Micro Concepts",
+    "images": [
+      "assets/images/gallery/bask1.webp",
+      "assets/images/gallery/bask2.webp",
+      "assets/images/gallery/bask3.webp",
+      "assets/images/gallery/bask4.webp",
+      "assets/images/gallery/bask5.webp",
+      "assets/images/gallery/bask6.webp"
+    ]
+  },
+  {
     "title": "High Gloss - Forged Carbon Fibre Wrap",
     "date": "August 2025",
     "description": "Highly flexible polymer PET film with Good weather resistance. No residual glue after removal and Long durability; 7 years indoors and 3-5 years outdoors",
@@ -34,4 +47,5 @@
   }
 
 ]
+
 
